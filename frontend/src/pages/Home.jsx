@@ -1,39 +1,19 @@
-
-import {useState, useEffect} from "react";
+import { useMetaMask } from "metamask-react";
 
 function Home() {
-  const [wallet, setWalletAddress] = useState('');
+  const { status, connect, account } = useMetaMask();
 
-  useEffect(()=>{
-    console.log(wallet)
-  },[])
+  if (status === "initializing")
+    return <div>Synchronisation with MetaMask ongoing...</div>;
 
-  const connectWallet = async () => {  // Check if MetaMask is installed on user's browser
-    if(window.ethereum) {    
-      const accounts = await window.ethereum.request({ method: 'eth_accounts' });    
-      const chainId = await window.ethereum.request({ method: 'eth_chainId'});    // Check if user is connected to Mainnet
-      
-      if(chainId != '0x1') {
-        alert("Please connect to Mainnet");
-      } 
-      else {
-        console.log('here '+ accounts);
-        let wallet = accounts[0];
-        setWalletAddress(wallet);
-        // console.log("Success");
-        // console.log("address" + wallet);
-      }  } 
-      else {
-      alert("Please install Mask");
-    }
-  }
-  return (
-  <button className = "btn" onClick= {connectWallet}>Connect</button>
-);
-  //return <div>Home</div>;
+  if (status === "unavailable") return <div>MetaMask not available :(</div>;
 
+  if (status === "notConnected")
+    return <button onClick={connect}>Connect to MetaMask</button>;
 
+  if (status === "connecting") return <div>Connecting...</div>;
+
+  if (status === "connected") return <div>Connected account: {account}</div>;
+
+  return Home;
 }
-
-
-export default Home;

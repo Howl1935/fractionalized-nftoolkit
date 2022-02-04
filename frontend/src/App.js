@@ -1,9 +1,11 @@
 import "./App.css";
+import CovalentTest from "./pages/CovalentTest";
 
 function App() {
+
   return (
     <div className="App">
-      <h1>HELLO</h1>
+      <CovalentTest />
     </div>
   );
 }

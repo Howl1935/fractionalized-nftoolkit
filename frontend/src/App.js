@@ -13,9 +13,10 @@ function App() {
 	return (
 		<>
 			<Router>
-				<div className="container">
-          
+			
+        <div className="flex flex-col justify-between h-screen">
 					<Navbar />
+          <main className='container mx-auto px-3 pb-12'>
 					<Routes>
 						<Route path="/" element={<CovalentTest />} />
 
@@ -24,6 +25,7 @@ function App() {
 							<Route path="/gallery" element={<NftGallery />} />
 						</Route>
 					</Routes>
+          </main>
 				</div>
 			</Router>
 		</>

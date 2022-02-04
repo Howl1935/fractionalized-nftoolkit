@@ -13,19 +13,18 @@ function App() {
 	return (
 		<>
 			<Router>
-			
-        <div className="flex flex-col justify-between h-screen">
 					<Navbar />
-          <main className='container mx-auto px-3 pb-12'>
-					<Routes>
-						<Route path="/" element={<CovalentTest />} />
+					<div className="flex flex-col justify-between h-screen ">
 
-						{/* This is how we will always create private routes */}
-						<Route path="/gallery" element={<PrivateRoute />}>
-							<Route path="/gallery" element={<NftGallery />} />
-						</Route>
-					</Routes>
-          </main>
+					<main className="flex items-center justify-center container mx-auto px-3 pb-12  ">
+						<Routes>
+							<Route path="/" element={<Home />} />
+							{/* This is how we will always create private routes */}
+							<Route path="/gallery" element={<PrivateRoute />}>
+								<Route path="/gallery" element={<NftGallery />} />
+							</Route>
+						</Routes>
+					</main>
 				</div>
 			</Router>
 		</>

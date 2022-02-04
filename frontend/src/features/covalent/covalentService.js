@@ -9,9 +9,6 @@ const getNFTsETH = async (walletAddress) => {
     return response.data.data
   }
   
-  
-
-
 const covalentService = {
     getNFTsETH,
 

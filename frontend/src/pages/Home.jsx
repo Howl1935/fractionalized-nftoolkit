@@ -1,34 +1,30 @@
-import { useMetaMask } from 'metamask-react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { setMetamaskAddress } from '../features/covalent/covalentSlice';
+import { getNFTsETH, getNfts } from '../features/covalent/covalentSlice';
+import Spinner from '../components/layout/spinner/Spinner';
+import { useNavigate } from 'react-router-dom';
 
 function Home() {
-	const { status, connect, account } = useMetaMask();
+	const { nfts, address, isLoading, isSuccess } = useSelector(
+		(state) => state.covalent
+	);
 	const dispatch = useDispatch();
+	const navigate = useNavigate();
+
 	useEffect(() => {
-		if (status === 'connected') {
-			//this should actually be account, but we want to use Max's gallery
-			dispatch(
-				setMetamaskAddress('0xDec7778a7E416b0f4988Bb1Faff70cE9FAD6C233')
-			);
+		if (isSuccess) {
+			dispatch(getNfts());
 		}
-	}, [status]);
-	if (status === 'initializing')
-		return <div>Synchronisation with MetaMask ongoing...</div>;
+		if (address !== null) {
+			dispatch(getNFTsETH(address));
+		}
+	}, [isSuccess, address]);
 
-	if (status === 'unavailable') return <div>MetaMask not available :(</div>;
-
-	if (status === 'notConnected')
-		return <button onClick={connect}>Connect to MetaMask</button>;
-
-	if (status === 'connecting') return <div>Connecting...</div>;
-
-	if (status === 'connected') {
-		return <div>Connected account: {account}</div>;
+	if (isLoading) {
+		return <Spinner />;
 	}
 
-	return Home;
+	return <>{nfts !== null && navigate('/gallery')}<h1>HOME PAGE</h1></>;
 }
 
 export default Home;

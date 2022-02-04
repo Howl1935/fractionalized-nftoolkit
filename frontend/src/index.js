@@ -7,9 +7,10 @@ import { Provider } from 'react-redux';
 
 ReactDOM.render(
 	<React.StrictMode>
+      <MetaMaskProvider>
 		<Provider store={store}>
 			<App />
 		</Provider>
+   </MetaMaskProvider>
 	</React.StrictMode>,
 	document.getElementById('root')
-);

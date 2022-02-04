@@ -1,3 +1,4 @@
+
 import './App.css';
 import { useState, useEffect } from 'react';
 
@@ -28,6 +29,5 @@ function App() {
 			</Router>
 		</>
 	);
-}
 
 export default App;

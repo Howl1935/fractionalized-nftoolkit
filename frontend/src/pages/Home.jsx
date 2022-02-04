@@ -1,6 +1,7 @@
 import { useMetaMask } from "metamask-react";
 
 function Home() {
+
   const { status, connect, account } = useMetaMask();
 
   if (status === "initializing")
@@ -17,3 +18,4 @@ function Home() {
 
   return Home;
 }
+

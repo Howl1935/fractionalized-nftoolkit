@@ -1,4 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+
+
  import covalentService from './covalentService';
 
 // Get user from localstorage
@@ -8,6 +10,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 const initialState = {
   userData:  null,
   nfts: null,
+  address: null,
   isError: false,
   isSuccess: false,
   isLoading: false,
@@ -52,6 +55,9 @@ export const covalentSlice = createSlice({
       getNfts: (state)=> {
         state.nfts = state.userData.items.filter((contract) => {
            return contract.type === "nft" && contract.nft_data !== null})
+      },
+      setMetamaskAddress: (state, action) =>{
+        state.address = action.payload;
       }
 	},
 	extraReducers: (builder) => {
@@ -75,5 +81,5 @@ export const covalentSlice = createSlice({
 });
 
 
-export const { reset, getNfts } = covalentSlice.actions
+export const { reset, getNfts, setMetamaskAddress } = covalentSlice.actions
 export default covalentSlice.reducer

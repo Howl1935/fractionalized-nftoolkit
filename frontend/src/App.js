@@ -1,4 +1,3 @@
-
 import './App.css';
 import { useState, useEffect } from 'react';
 
@@ -15,10 +14,10 @@ function App() {
 		<>
 			<Router>
 				<div className="container">
+          
 					<Navbar />
 					<Routes>
 						<Route path="/" element={<CovalentTest />} />
-						<Route path="/home" element={<Home />} />
 
 						{/* This is how we will always create private routes */}
 						<Route path="/gallery" element={<PrivateRoute />}>
@@ -29,5 +28,5 @@ function App() {
 			</Router>
 		</>
 	);
-  }
+}
 export default App;

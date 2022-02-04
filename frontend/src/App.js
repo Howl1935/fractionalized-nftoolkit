@@ -1,5 +1,4 @@
 import './App.css';
-import { useState, useEffect } from 'react';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -7,7 +6,6 @@ import Navbar from './components/layout/Navbar';
 import Home from './pages/Home';
 import NftGallery from './pages/NftGallery';
 import PrivateRoute from './components/PrivateRoute';
-import CovalentTest from './pages/CovalentTest';
 
 function App() {
 	return (

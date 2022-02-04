@@ -1,9 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-
 import covalentService from './covalentService';
-
-// Get user from localstorage
-//const user = JSON.parse(localStorage.getItem('user'))
 
 // First check to see if user is in local storage, if not set to null
 const initialState = {
@@ -18,7 +14,7 @@ const initialState = {
 
 // Use wallet address to get data from covalent endpoint
 export const getNFTsETH = createAsyncThunk(
-	'auth/register',
+	'covalent/getNFTsETH',
 	async (userData, thunkAPI) => {
 		try {
 			return await covalentService.getNFTsETH(userData);
@@ -46,9 +42,35 @@ export const covalentSlice = createSlice({
 			state.message = '';
 		},
 		getNfts: (state) => {
-			state.nfts = state.userData.items.filter((contract) => {
+			let finals = [];
+			const test = state.userData.items.filter((contract) => {
 				return contract.type === 'nft' && contract.nft_data !== null;
 			});
+			const test2 = test.map((element) => {
+				return element.nft_data;
+			});
+			test2.forEach((e) =>
+				e.forEach((el) =>
+					finals.push({
+						target_id: el.token_id,
+						original_owner: el.original_owner,
+						name : el.external_data.name,
+						description: el.external_data.description,
+						image: el.external_data.image,
+						image_256: el.external_data.image_256,
+						image_512: el.external_data.image_512,
+						owner: el.owner
+
+					})
+				)
+			);
+		
+			state.nfts = finals;
+
+			//arr[0]
+			//arr[1]
+			//arr[0]
+			//arr[1]
 		},
 		setMetamaskAddress: (state, action) => {
 			state.address = action.payload;

@@ -9,7 +9,7 @@ ReactDOM.render(
 	<React.StrictMode>
       <MetaMaskProvider>
 		<Provider store={store}>
-			<App />
+			<App className='font-roboto'/>
 		</Provider>
    	</MetaMaskProvider>
 	</React.StrictMode>,

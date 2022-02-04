@@ -6,7 +6,13 @@ module.exports = {
     container: {
       center: true,
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+
+        roboto: "'Roboto', 'sans-serif'",
+
+      },
+    },
   },
   plugins: [],
 }

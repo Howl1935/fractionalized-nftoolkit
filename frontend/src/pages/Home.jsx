@@ -5,7 +5,7 @@ import Spinner from '../components/layout/spinner/Spinner';
 import { useNavigate } from 'react-router-dom';
 
 function Home() {
-	const { nfts, address, isLoading, isSuccess } = useSelector(
+	const { nfts, address, isLoading, isSuccess, metamaskNotConnected } = useSelector(
 		(state) => state.covalent
 	);
 	const dispatch = useDispatch();
@@ -18,13 +18,17 @@ function Home() {
 		if (address !== null) {
 			dispatch(getNFTsETH(address));
 		}
-	}, [isSuccess, address]);
+		if(metamaskNotConnected){
+			navigate('/metamask');
+		}
+	}, [isSuccess, address,metamaskNotConnected]);
 
 	if (isLoading) {
 		return <Spinner />;
 	}
 
-	return <>{nfts !== null && navigate('/gallery')}<h1>HOME PAGE</h1></>;
+
+	return <>{nfts !== null && navigate('/gallery')}</>;
 }
 
 export default Home;

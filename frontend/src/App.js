@@ -6,7 +6,7 @@ import Navbar from './components/layout/Navbar';
 import Home from './pages/Home';
 import NftGallery from './pages/NftGallery';
 import PrivateRoute from './components/PrivateRoute';
-
+import Metamask from './pages/Metamask';
 function App() {
 	return (
 		<>
@@ -17,6 +17,7 @@ function App() {
 					<main className="flex items-center justify-center container mx-auto px-3 pb-12  ">
 						<Routes>
 							<Route path="/" element={<Home />} />
+							<Route path="/metamask" element={<Metamask />} />
 							{/* This is how we will always create private routes */}
 							<Route path="/gallery" element={<PrivateRoute />}>
 								<Route path="/gallery" element={<NftGallery />} />

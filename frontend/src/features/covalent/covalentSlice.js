@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import covalentService from './covalentService';
 
-// First check to see if user is in local storage, if not set to null
 const initialState = {
 	userData: null,
 	nfts: null,
@@ -10,6 +9,7 @@ const initialState = {
 	isSuccess: false,
 	isLoading: false,
 	message: '',
+	metamaskNotConnected: false,
 };
 
 // Use wallet address to get data from covalent endpoint
@@ -67,14 +67,14 @@ export const covalentSlice = createSlice({
 		
 			state.nfts = finals;
 
-			//arr[0]
-			//arr[1]
-			//arr[0]
-			//arr[1]
+
 		},
 		setMetamaskAddress: (state, action) => {
 			state.address = action.payload;
 		},
+		isNotConnected: (state, action) =>{
+			state.metamaskNotConnected = action.payload;
+		}
 	},
 	extraReducers: (builder) => {
 		builder
@@ -95,5 +95,5 @@ export const covalentSlice = createSlice({
 	},
 });
 
-export const { reset, getNfts, setMetamaskAddress } = covalentSlice.actions;
+export const { reset, getNfts, setMetamaskAddress, isNotConnected } = covalentSlice.actions;
 export default covalentSlice.reducer;

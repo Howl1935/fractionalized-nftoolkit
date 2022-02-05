@@ -27,7 +27,7 @@ function ConnectWallet() {
 	if (status === 'connecting') return <div>Connecting...</div>;
 
 	if (status === 'connected') {
-		return <div>Connected account: {account}</div>;
+		return <div>Connected Wallet: {account}</div>;
 	}
 
 	return ConnectWallet;

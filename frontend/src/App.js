@@ -6,7 +6,7 @@ import Navbar from './components/layout/Navbar';
 import Home from './pages/Home';
 import NftGallery from './pages/NftGallery';
 import PrivateRoute from './components/PrivateRoute';
-import Metamask from './pages/Metamask';
+import Metamask from './components/Metamask';
 function App() {
 	return (
 		<>

@@ -9,7 +9,6 @@ const initialState = {
 	isSuccess: false,
 	isLoading: false,
 	message: '',
-	metamaskNotConnected: false,
 };
 
 // Use wallet address to get data from covalent endpoint
@@ -72,9 +71,7 @@ export const covalentSlice = createSlice({
 		setMetamaskAddress: (state, action) => {
 			state.address = action.payload;
 		},
-		isNotConnected: (state, action) =>{
-			state.metamaskNotConnected = action.payload;
-		}
+
 	},
 	extraReducers: (builder) => {
 		builder
@@ -95,5 +92,5 @@ export const covalentSlice = createSlice({
 	},
 });
 
-export const { reset, getNfts, setMetamaskAddress, isNotConnected } = covalentSlice.actions;
+export const { reset, getNfts, setMetamaskAddress } = covalentSlice.actions;
 export default covalentSlice.reducer;

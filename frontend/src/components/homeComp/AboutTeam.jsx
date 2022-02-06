@@ -21,7 +21,7 @@ function AboutTeam() {
               </h1>
              <div className="flex flex-row float-right space-x-1">
              <a href="https://github.com/maxbettinelli"><img className="" src={githubLogo} width="42" height="33"></img></a>
-                <a href="https://github.com/maxbettinelli"><img className="mt-1" src={linkedinLogo} width="35" height="37"></img></a>
+                <a href="https://www.linkedin.com/in/maxbettinelli/"><img className="mt-1" src={linkedinLogo} width="35" height="37"></img></a>
                 </div>
             </div>
 

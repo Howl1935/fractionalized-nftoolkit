@@ -50,14 +50,15 @@ function Home() {
 	}
 
 	return (
-		<div className="w-full">
+		<div className="w-full  h-screen  ">
 			{connected === 'unsuccessful' && <Metamask />}
 			{connected === 'pending' && (
-				<div className="bg-blue w-full pt-10">
+				<div className=" w-full pt-10">
 					<h1>Please connect to MetaMask</h1>
 				</div>
 			)}
 			{(nfts !== null || nftsPOLY !== null) && <NavigationButtons />}
+		
 
 			<div className="flex flex-col ">
 				<div className="flex flex-row">

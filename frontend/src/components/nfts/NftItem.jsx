@@ -4,7 +4,9 @@ function NftItem({ nft: { target_id, image, name } }) {
 	let purchasePrice = 10000;
 	let profit = currentPrice - purchasePrice;
 
-	let title = "#314 Leo's Dream"
+	if(image === "" || image === null){
+		return null
+	}else{
   return (
     <div class="flex flex-col space-y-3 box-border h-70">
       <div className="bg-yellow-500 p-5 rounded-md">
@@ -16,7 +18,7 @@ function NftItem({ nft: { target_id, image, name } }) {
       </div>
 	  <div class = "shadow-[0_4px_4px_rgba(0,0,0,0.25)] bg-[#ffffe0] rounded-[15px] min-12">	
 			<div class="flex flex-col">
-				<h1 class= "text-center text-3xl">{title}</h1>
+				<h1 class= "text-center text-3xl">{name}</h1>
 				<div class="flex flex-row ml-2">
 					<p>Current price: ${currentPrice} </p>
 					<p>Purchase price: ${purchasePrice} </p>
@@ -26,5 +28,6 @@ function NftItem({ nft: { target_id, image, name } }) {
 	  </div>
     </div>
   );
+	}
 }
 export default NftItem;

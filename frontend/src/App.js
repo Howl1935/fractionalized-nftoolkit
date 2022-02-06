@@ -17,6 +17,7 @@ function App() {
 					<main className="flex items-center justify-center container mx-auto px-3 pb-12  ">
 						<Routes>
 							<Route path="/" element={<Home />} />
+							<Route path="/home" element={<Home />} />
 							<Route path="/metamask" element={<Metamask />} />
 							{/* This is how we will always create private routes */}
 							<Route path="/gallery" element={<PrivateRoute />}>

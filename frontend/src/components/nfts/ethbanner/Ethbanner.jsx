@@ -16,7 +16,7 @@ function Ethbanner() {
           height="100"
         />
       </div>
-      <div class="flex flex-row space-x-1 -mt-4">
+      <div class="flex flex-row space-x-1 -mt-2">
         <p class="text-lg">total NFTS:</p>
         <p class="text-lg text-[#FFC702] ">{nftCount}</p>
       </div>

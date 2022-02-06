@@ -8,10 +8,9 @@ import {
 
 } from '../features/covalent/covalentSlice';
 import Spinner from '../components/layout/spinner/Spinner';
-import { useMetaMask } from 'metamask-react';
 import Metamask from '../components/Metamask';
-import NavigationButtons
- from '../components/navigation/NavigationButtons';
+import NavigationButtons from '../components/navigation/NavigationButtons';
+
 function Home() {
 	const { nfts, nftsPOLY, userDataPOLY, isLoadingP, address, isLoading, isSuccess, isSuccessP, userData, connected } = useSelector(
 		(state) => state.covalent

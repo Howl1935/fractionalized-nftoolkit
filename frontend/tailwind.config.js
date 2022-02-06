@@ -10,6 +10,7 @@ module.exports = {
       fontFamily: {
 
         roboto: "'Roboto', 'sans-serif'",
+        poppins: "'Poppins'"
 
       },
       colors: {

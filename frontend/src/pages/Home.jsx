@@ -15,7 +15,7 @@ function Home() {
 
 	useEffect(() => {
 		if (isSuccess) {
-			(getNfts());
+			dispatch(getNfts());
 		}
 		if (address !== null) {
 			dispatch(getNFTsETH(address));

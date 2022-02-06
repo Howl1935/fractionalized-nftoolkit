@@ -45,10 +45,9 @@ function Home() {
 		}
 	}, [address, isSuccess, isSuccessP, dispatch]);
 
-	if (isLoading) {
-		return <Spinner />;
-	}
-
+  if (isLoading) {
+    return <Spinner />;
+  }
 	return (
 		<div className="w-full  h-screen  ">
 			{connected === 'unsuccessful' && <Metamask />}

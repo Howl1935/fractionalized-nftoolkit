@@ -1,16 +1,20 @@
 //import { Link } from 'react-router-dom';
-import flourish from "../assets/flourish2.png";
+import flourish from "../assets/flourish-logo.png";
 import ConnectWallet from "../ConnectWallet";
 
 import PropTypes from "prop-types";
 function Navbar({ title }) {
   return (
-    <nav className="flex items-center border roundedjustify-between flex-wrap 
+    <nav
+      className="flex items-center border roundedjustify-between flex-wrap 
     bg-gradient-to-r from-[#A7DA4E] via-[#6DBD86] to-[#A7DA4E] p-6
-    shadow-[0_4px_10px_10px_rgba(0,0,0,0.1)]">
+    shadow-[0_4px_10px_10px_rgba(0,0,0,0.1)]"
+    >
       <div className="flex items-center flex-shrink-0 text-black mr-6">
-        <img src={flourish} alt="flourish logo" width="149" height="144" />
-        <span className="font-semibold text-5xl tracking-tight text-[#FFC702]">FLOURISH</span>
+        <img src={flourish} alt="flourish logo" width="80" height="74" />
+        <span className="font-semibold text-5xl tracking-tight text-[#FFC702] pl-5">
+          FLOURISH
+        </span>
       </div>
       <div className="block lg:hidden">
         <button className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">

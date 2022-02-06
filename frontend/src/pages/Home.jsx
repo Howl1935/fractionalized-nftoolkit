@@ -15,7 +15,9 @@ import { FaChartLine } from 'react-icons/fa';
 import { FaLinode } from 'react-icons/fa';
 import TechStack from '../components/TechStack';
 import NavigationButtons from '../components/navigation/NavigationButtons';
+import AboutTeam from '../components/AboutTeam'
 import MetamaskButton from '../components/layout/MetamaskButton';
+
 
 function Home() {
 	const {
@@ -78,6 +80,10 @@ function Home() {
 					</div>
 				</div>
 				<TechStack />
+        <div className='flex justify-center'>
+          <AboutTeam/>
+          </div>
+        
 			</div>
 		</div>
 	);

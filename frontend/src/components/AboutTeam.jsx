@@ -1,8 +1,8 @@
 import React from "react";
-import cpLogo from "../assets/CalPolyLogo.png";
-import cpBlock from "../assets/cpblockchain_1.png";
-import githubLogo from "../assets/githubLogo.png";
-import linkedinLogo from "../assets/linkedin-icon.png";
+import cpLogo from "./assets/CalPolyLogo.png";
+import cpBlock from "./assets/cpblockchain_1.png";
+import githubLogo from "./assets/githubLogo.png";
+import linkedinLogo from "./assets/linkedin-icon.png";
 
 function AboutTeam() {
   return (

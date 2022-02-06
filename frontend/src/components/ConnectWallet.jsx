@@ -2,7 +2,7 @@ import { useMetaMask } from 'metamask-react';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import {
-	setMetamaskAddress
+	setMetamaskAddress, setConnected
 } from '../features/covalent/covalentSlice';
 
 function ConnectWallet() {
@@ -16,13 +16,16 @@ function ConnectWallet() {
 			dispatch(
 				setMetamaskAddress('0xDec7778a7E416b0f4988Bb1Faff70cE9FAD6C233')
 			);
+			dispatch(setConnected('success'))
 		}
 	}, [status]);
 
-	if (status === 'initializing')
-		return <div>Synchronisation with MetaMask ongoing...</div>;
+	if (status === 'initializing'){
+		dispatch(setConnected('pending'))
+		return <div>Synchronisation with MetaMask ongoing...</div>;}
 
 	if (status === 'unavailable') {
+		dispatch(setConnected('unsuccessful'))
 		return <div>MetaMask not available :(</div>;
 	}
 	if (status === 'notConnected') {

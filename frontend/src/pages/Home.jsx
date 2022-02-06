@@ -8,35 +8,35 @@ import {
 } from "../features/covalent/covalentSlice";
 import Spinner from "../components/layout/spinner/Spinner";
 import { useNavigate } from "react-router-dom";
-import { useMetaMask } from "metamask-react";
 import Metamask from "../components/Metamask";
 import Intropage from "../components/Intropage";
 import { FaBinoculars } from "react-icons/fa";
 import { FaChartLine } from "react-icons/fa";
 import { FaLinode } from "react-icons/fa";
 import TechStack from "../components/TechStack";
+import NavigationButtons from '../components/navigation/NavigationButtons';
 
+             
 function Home() {
-  const { nfts, nftsPOLY, address, isLoading, isSuccess } = useSelector(
+  const { nfts, nftsPOLY, userDataPOLY, isLoadingP, address, isLoading, isSuccess, isSuccessP, userData, connected } = useSelector(
     (state) => state.covalent
   );
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const { status } = useMetaMask();
 
-  useEffect(() => {
-    if (isSuccess) {
-      dispatch(getNfts());
-      dispatch(getNftsPOLY());
-    }
-    if (address !== null) {
-      dispatch(getNFTsETH(address));
-      dispatch(getNFTsPOLY(address));
-    }
-    if (nfts !== null) {
-      navigate("/gallery");
-    }
-  }, [isSuccess, address, nfts, nftsPOLY, navigate]);
+	useEffect(() => {
+		if (address !== null ) {
+			dispatch(getNFTsETH(address));
+			dispatch(getNFTsPOLY(address));
+		}
+
+		if (isSuccess && userData !== null) {
+			dispatch(getNfts());
+		}
+		if(isSuccessP && userDataPOLY !== null){
+			dispatch(getNftsPOLY());
+		}
+
+	}, [ address, isSuccess, dispatch]);
 
   if (isLoading) {
     return <Spinner />;
@@ -44,9 +44,10 @@ function Home() {
 
   return (
     <>
-      {/* {nfts !== null && navigate('/gallery')} */}
-
-      {status === "unavailable" && <Metamask />}
+     
+      {connected === 'unsuccessful' && <Metamask />}
+			{connected === 'pending' && <h1>Please connect to MetaMask</h1>}
+			{(nfts !== null || nftsPOLY !== null ) && <NavigationButtons />}
       <div className="flex flex-col">
 		  <div className="flex flex-row">
 		  <div className="flex justify-around items-center w-full">
@@ -68,7 +69,6 @@ function Home() {
 	<TechStack />
 	</div>
 </>
-
   );
 }
 

@@ -1,4 +1,4 @@
-//import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import flourish from "../assets/flourish-logo.png";
 import ConnectWallet from "../ConnectWallet";
 
@@ -11,7 +11,9 @@ function Navbar({ title }) {
     shadow-[0_4px_10px_10px_rgba(0,0,0,0.1)]"
     >
       <div className="flex items-center flex-shrink-0 text-black mr-6">
+		 <Link to='/home'>
         <img src={flourish} alt="flourish logo" width="80" height="74" />
+		</Link>
         <span className="font-semibold text-5xl tracking-tight text-[#FFC702] pl-5">
           FLOURISH
         </span>
@@ -60,7 +62,7 @@ function Navbar({ title }) {
 }
 
 Navbar.defaultProps = {
-  title: "Eth-e-Real",
+  title: "Flourish",
 };
 
 Navbar.propTypes = {

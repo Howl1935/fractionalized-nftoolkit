@@ -14,9 +14,9 @@ function NftGallery() {
 
 	return (
 		<div>	
-			{nfts.length > 0 && (<><Ethbanner /><NftResult /></>) }
-			{nftsPOLY.length > 0 && (<> <PolyBanner /><NftResultPOLY /> </>) }
-			{nftsPOLY.length === 0 && nfts.length === 0 && <h1>No NFTS my friend</h1>}
+			{(nfts !== null && nfts.length > 0) && (<><Ethbanner /><NftResult /></>) }
+			{(nftsPOLY !== null &&nftsPOLY.length > 0) && (<> <PolyBanner /><NftResultPOLY /> </>) }
+			{(nfts === null || nftsPOLY === null || nftsPOLY.length === 0 && nfts.length === 0) && <h1>No NFTS my friend</h1>}
 		</div>
 	);
 	

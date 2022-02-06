@@ -12,6 +12,9 @@ module.exports = {
         roboto: "'Roboto', 'sans-serif'",
 
       },
+      colors: {
+        'figma-green': '#93D062',
+      },
     },
   },
   plugins: [],

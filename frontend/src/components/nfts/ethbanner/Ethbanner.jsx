@@ -1,4 +1,4 @@
-import {useState, useEffect} from "react";
+import {useState} from "react";
 import ethLogo from "../../assets/eth-logo.png";
 import { useSelector } from 'react-redux';
 

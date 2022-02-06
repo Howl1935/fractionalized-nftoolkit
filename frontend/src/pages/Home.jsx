@@ -43,7 +43,7 @@ function Home() {
 		if (isSuccessP && userDataPOLY !== null) {
 			dispatch(getNftsPOLY());
 		}
-	}, [address, isSuccess, dispatch]);
+	}, [address, isSuccess, isSuccessP, dispatch]);
 
 	if (isLoading) {
 		return <Spinner />;

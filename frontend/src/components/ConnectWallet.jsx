@@ -14,7 +14,7 @@ function ConnectWallet() {
 			//this should actually be account, but we want to use Max's gallery
 			//'0xDec7778a7E416b0f4988Bb1Faff70cE9FAD6C233'
 			dispatch(
-				setMetamaskAddress('0xDec7778a7E416b0f4988Bb1Faff70cE9FAD6C233')
+				setMetamaskAddress(account)
 			);
 			dispatch(setConnected('success'))
 		}

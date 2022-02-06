@@ -10,8 +10,11 @@ module.exports = {
       fontFamily: {
 
         roboto: "'Roboto', 'sans-serif'",
-        poppins: "'Poppins', sans-serif"
+        poppins: "'Poppins'"
 
+      },
+      colors: {
+        'figma-green': '#93D062',
       },
     },
   },

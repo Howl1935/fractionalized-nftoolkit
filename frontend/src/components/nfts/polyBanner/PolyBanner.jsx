@@ -12,7 +12,7 @@ function PolyBanner() {
   let network = "POLYGON"
  
   return (
-    <div className="mt-5 mb-5">
+    <div className="mt-5 mb-5 p-3 bg-[#ffffe0] drop-shadow-[0_4px_4px_rgba(0,0,0,0.10)]">
       <div class="flex flex-row space-x--1 ">
         <p class="text-5xl pb-3 pr-10">{network}</p>
         <img

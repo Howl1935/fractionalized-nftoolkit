@@ -10,7 +10,11 @@ const initialState = {
 	isError: false,
 	isSuccess: false,
 	isLoading: false,
+	isErrorP: false,
+	isSuccessP: false,
+	isLoadingP: false,
 	message: '',
+	connected: '',
 };
 
 // Use wallet address to get data from covalent endpoint for ETH NFTS
@@ -41,12 +45,7 @@ export const covalentSlice = createSlice({
 	name: 'covalent',
 	initialState,
 	reducers: {
-		reset: (state) => {
-			state.isLoading = false;
-			state.isError = false;
-			state.isSuccess = false;
-			state.message = '';
-		},
+
 		getNfts: (state) => {
 			let finals = [];
 			const test = state.userData.items.filter((contract) => {
@@ -106,6 +105,9 @@ export const covalentSlice = createSlice({
 		setMetamaskAddress: (state, action) => {
 			state.address = action.payload;
 		},
+		setConnected: (state, action) => {
+			state.connected = action.payload;
+		},
 
 	},
 	extraReducers: (builder) => {
@@ -125,21 +127,21 @@ export const covalentSlice = createSlice({
 				state.userData = null;
 			})
 			.addCase(getNFTsPOLY.pending, (state) => {
-				state.isLoading = true;
+				state.isLoadingP = true;
 			})
 			.addCase(getNFTsPOLY.fulfilled, (state, action) => {
-				state.isLoading = false;
-				state.isSuccess = true;
+				state.isLoadingP = false;
+				state.isSuccessP = true;
 				state.userDataPOLY = action.payload;
 			})
 			.addCase(getNFTsPOLY.rejected, (state, action) => {
-				state.isLoading = false;
-				state.isError = true;
+				state.isLoadingP = false;
+				state.isErrorP = true;
 				state.message = action.payload;
-				state.userData = null;
+				state.userDataPOLY = null;
 			});
 	},
 });
 
-export const { reset, getNfts, getNftsPOLY, setMetamaskAddress } = covalentSlice.actions;
+export const { getNfts, getNftsPOLY, setMetamaskAddress,setConnected } = covalentSlice.actions;
 export default covalentSlice.reducer;

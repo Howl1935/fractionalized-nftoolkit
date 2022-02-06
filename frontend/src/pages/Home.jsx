@@ -16,6 +16,8 @@ import { FaLinode } from 'react-icons/fa';
 import TechStack from '../components/TechStack';
 import NavigationButtons from '../components/navigation/NavigationButtons';
 import AboutTeam from '../components/AboutTeam'
+import MetamaskButton from '../components/layout/MetamaskButton';
+
 
 function Home() {
 	const {
@@ -54,7 +56,7 @@ function Home() {
 			{connected === 'unsuccessful' && <Metamask />}
 			{connected === 'pending' && (
 				<div className=" w-full pt-10">
-					<h1>Please connect to MetaMask</h1>
+					<div><MetamaskButton /></div>
 				</div>
 			)}
 			{(nfts !== null || nftsPOLY !== null) && <NavigationButtons />}

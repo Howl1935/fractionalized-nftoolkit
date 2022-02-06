@@ -9,11 +9,11 @@ function Ethbanner() {
       <div class="flex flex-row space-x--1">
         <p class="text-5xl">{network}</p>
         <img
-          class="drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] -mx-5 -my-1.5"
+          className="drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] -mx-5 -my-1.5"
           src={ethLogo}
           alt="eth logo"
-          width="115"
-          height="115"
+          width="100"
+          height="100"
         />
       </div>
       <div class="flex flex-row space-x-1 -mt-4">

@@ -1,0 +1,83 @@
+/* Component 1 */
+.ethBanner{
+
+    position: absolute;
+    width: 293px;
+    height: 84px;
+    left: 122px;
+    top: 161px;
+    
+    
+}
+
+/* ETHEREUM */
+.ethText{
+
+    position: absolute;
+    left: 0%;
+    right: 17.06%;
+    top: 0%;
+    bottom: 38.1%;
+    
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 100px;
+    line-height: 72px;
+    
+    color: #575757;
+    
+}
+
+/* total NFTS: 51 */
+.totalNFTS{
+    position: absolute;
+    left: 0%;
+    right: 61.09%;
+    top: 67.86%;
+    bottom: 0%;
+    
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 27px;
+    /* identical to box height */
+    
+    color: #565656;
+    
+}
+
+/* ethereum-eth-logo 1 */
+.ethLogo{
+
+    position: absolute;
+    left: 82.94%;
+    right: 0%;
+    top: 16.67%;
+    bottom: 23.81%;
+    
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    
+
+}
+
+
+/* Component 1 */
+
+
+
+/* ETHEREUM */
+
+
+
+/* total NFTS: 51 */
+
+
+
+
+
+/* ethereum-eth-logo 1 */
+
+
+

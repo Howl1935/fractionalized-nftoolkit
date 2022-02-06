@@ -1,13 +1,20 @@
-import React from "react";
+import {useState, useEffect} from "react";
 import ethLogo from "../../assets/eth-logo.png";
+import { useSelector } from 'react-redux';
 
 function Ethbanner() {
+  const { nfts } = useSelector(
+		(state) => state.covalent
+	);
+  const [nftCount] = useState(nfts.length);
+
+
   let network = "ETHEREUM"
-  let nftCount = 51;
+ 
   return (
-    <div>
-      <div class="flex flex-row space-x--1">
-        <p class="text-5xl">{network}</p>
+    <div className="mt-5 mb-5">
+      <div class="flex flex-row space-x--1 ">
+        <p class="text-5xl pb-3">{network}</p>
         <img
           className="drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] -mx-5 -my-1.5"
           src={ethLogo}

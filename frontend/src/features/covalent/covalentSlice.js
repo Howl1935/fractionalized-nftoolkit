@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import covalentService from './covalentService';
 
-// First check to see if user is in local storage, if not set to null
 const initialState = {
 	userData: null,
 	nfts: null,
@@ -67,14 +66,12 @@ export const covalentSlice = createSlice({
 		
 			state.nfts = finals;
 
-			//arr[0]
-			//arr[1]
-			//arr[0]
-			//arr[1]
+
 		},
 		setMetamaskAddress: (state, action) => {
 			state.address = action.payload;
 		},
+
 	},
 	extraReducers: (builder) => {
 		builder

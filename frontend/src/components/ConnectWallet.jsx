@@ -1,10 +1,12 @@
 import { useMetaMask } from 'metamask-react';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { setMetamaskAddress } from '../features/covalent/covalentSlice';
+import {
+	setMetamaskAddress
+} from '../features/covalent/covalentSlice';
 
 function ConnectWallet() {
-    const { status, connect, account } = useMetaMask();
+	const { status, connect, account } = useMetaMask();
 	const dispatch = useDispatch();
 
 	useEffect(() => {
@@ -15,19 +17,22 @@ function ConnectWallet() {
 			);
 		}
 	}, [status]);
-    
+
 	if (status === 'initializing')
 		return <div>Synchronisation with MetaMask ongoing...</div>;
 
-	if (status === 'unavailable') return <div>MetaMask not available :(</div>;
-
-	if (status === 'notConnected')
+	if (status === 'unavailable') {
+		return <div>MetaMask not available :(</div>;
+	}
+	if (status === 'notConnected') {
 		return <button onClick={connect}>Connect to MetaMask</button>;
+	}
 
 	if (status === 'connecting') return <div>Connecting...</div>;
 
 	if (status === 'connected') {
-		return <div>Connected account: {account}</div>;
+
+		return <div>Connected Wallet: {account}</div>;
 	}
 
 	return ConnectWallet;

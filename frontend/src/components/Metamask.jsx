@@ -18,18 +18,20 @@ function Metamask() {
             </p>
             <div className="text-left flex flex-col space-y-1 py-4">
               <div>1: Download Metamask</div>
+              
               <div>2: Connect to the correct network</div>
               <div>3: Refresh the Page</div>
             </div>
           </div>
           <div className="items-center px-4 py-3">
+            <a href="https://metamask.io/">
             <button
               id="ok-btn"
-              onClick={console.log("please download metamask")}
-              className="px-4 py-2 bg-green-500 text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-300"
-            >
-              OK
+              className="px-4 py-2 bg-green-500 text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-300">
+              Download Metamask
             </button>
+            </a>
+           
           </div>
         </div>
       </div>

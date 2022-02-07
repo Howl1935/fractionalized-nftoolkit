@@ -13,10 +13,11 @@ function MetamaskButton() {
             Click the following button to be routed to download Metamask.
           </p>
 
-          <button class="bg-blue-300 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded-full border-2 border-black">
-            Go to Metamask
-            <link href="https://metamask.io/" rel="metamask"></link>
-          </button>
+          <a href="https://metamask.io/">
+            <button class="bg-blue-300 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded-full border-2 border-black">
+              Go to Metamask{" "}
+            </button>
+          </a>
         </div>
       </div>
     </div>
